@@ -27,11 +27,14 @@ WD=$(grep working_directory: $PARAMS | awk '{ print $2 }' )
 NS=$(grep number_of_samples: $PARAMS | awk '{ print $2 }' )
 GNM=$(grep genome: $PARAMS | awk '{ print $2 }' )
 ANT=$(grep annotation: $PARAMS | awk '{ print $2 }' )
+PATH=$(grep path: $PARAMS | awk '{ print $2 }' )
 
-echo "WD=" $WD
-echo "NS=" $NS
-echo "GNM=" $GNM
-echo "ANT=" $ANT
+echo "Reading parameters from" $PARAMS
+echo "  Working directory created in" $WD
+echo "  Number of samples:" $NS
+echo "  Downloading/Copying genome from" $GNM
+echo "  Downloading/Copying annotation from" $ANT
+echo "  The path to the script is" $PATH
 
 
 SAMPLES=()
@@ -107,6 +110,6 @@ done
 I=1
 while [ $I -le $NS ]
 do
-   qsub -N sample_$I -o $WD/logs/sample_$I rna_seq_sample_processing.sh $SAMPLE_ID $WD $NUM_SAMPLES
+   qsub -N sample_$I -o $WD/logs/sample_$I $PATH/rna_seq_sample_processing.sh $SAMPLE_ID $WD $NUM_SAMPLES $PATH
    ((I++))
 done

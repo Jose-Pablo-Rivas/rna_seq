@@ -9,6 +9,12 @@
 SAMPLE_ID=$1
 WD=$2
 NUM_SAMPLES=$3
+PATH=$4
+
+## Debuging parameters
+echo "Working directory:" $WD
+echo "Number of samples:" $NUM_SAMPLES
+echo "Path to scripts:" $PATH
 
 ## Access samples folder
 cd $WD/samples/sample_${SAMPLE_ID}
@@ -38,5 +44,5 @@ DONE_SAMPLES=$(wc -l $WD/logs/blackboard_rnaseq.txt)
 
 if [ $DONE_SAMPLES -eq $NUM_SAMPLES ]
 then
-   qsub -N transcriptome_merging -o $WD/logs/transcriptome transcriptome_merging.sh $WD
+   qsub -N transcriptome_merging -o $WD/logs/transcriptome $PATH/transcriptome_merging.sh $WD
 fi
