@@ -40,7 +40,10 @@ stringtie -e -B -G $WD/annotation/annotation.gtf -o sample_${SAMPLE_ID}.gtf samp
 ## Codigo de la pizarra-Punto de sincronizacion
 echo sample_${SAMPLE_ID} "DONE" >> $WD/logs/blackboard_rnaseq.txt
 
-DONE_SAMPLES=${wc -l $WD/logs/blackboard_rnaseq.txt}
+DONE_SAMPLES=$(cat $WD/logs/blackboard_rnaseq.txt | grep "DONE" | wc -l)
+
+echo "Done samples:" $DONE_SAMPLES
+
 
 if [ $DONE_SAMPLES -eq $NUM_SAMPLES ]
 then
