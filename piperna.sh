@@ -110,6 +110,6 @@ done
 I=1
 while [ $I -le $NS ]
 do
-   qsub -N sample_$I -o $WD/logs/sample_$I $SCRIPT/rna_seq_sample_processing.sh $SAMPLE_ID $WD $NUM_SAMPLES $SCRIPT
+   qsub -N sample_$I -o $WD/logs/sample_$I $SCRIPT/rna_seq_sample_processing.sh $I $WD $NS $SCRIPT
    ((I++))
 done
