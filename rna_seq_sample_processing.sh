@@ -23,7 +23,7 @@ cd $WD/samples/sample_${SAMPLE_ID}
 fastqc sample_${SAMPLE_ID}.fq.gz
 
 ## Mapping to reference genome
-hisat2 --dta -x $WD/genome/index -U sample_${SAMPLE_ID}.fq.gz -S sample_${SAMPLE_ID}.sam
+hisat2 --dta -x $WD/genome/genome -U sample_${SAMPLE_ID}.fq.gz -S sample_${SAMPLE_ID}.sam
 samtools sort -o sample_${SAMPLE_ID}.bam sample_${SAMPLE_ID}.sam
 rm sample_${SAMPLE_ID}.sam
 samtools index sample_${SAMPLE_ID}.bam
