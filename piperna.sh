@@ -30,11 +30,11 @@ ANT=$(grep annotation: $PARAMS | awk '{ print $2 }' )
 PATH=$(grep path: $PARAMS | awk '{ print $2 }' )
 
 echo "Reading parameters from" $PARAMS
-echo "  Working directory created in" $WD
-echo "  Number of samples:" $NS
-echo "  Downloading/Copying genome from" $GNM
-echo "  Downloading/Copying annotation from" $ANT
-echo "  The path to the script is" $PATH
+echo "Working directory created in" $WD
+echo "Number of samples:" $NS
+echo "Downloading/Copying genome from" $GNM
+echo "Downloading/Copying annotation from" $ANT
+echo "The path to the script is" $PATH
 
 
 SAMPLES=()
