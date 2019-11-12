@@ -1,0 +1,17 @@
+working_directory: /home/josemartin/diurnal
+
+number_of_samples: 4
+
+genome: /home/josemartin/example_rna_seq_zt2_zt14/chr5.fa
+
+annotation: /home/josemartin/example_rna_seq_zt2_zt14/chr5.gtf
+
+sample_1: /home/josemartin/example_rna_seq_zt2_zt14/zt14_chr5_rep1.fastq.gz
+
+sample_2: /home/josemartin/example_rna_seq_zt2_zt14/zt2_chr5_rep1.fastq.gz
+
+sample_3: /home/josemartin/example_rna_seq_zt2_zt14/zt14_chr5_rep2.fastq.gz
+
+sample_4: /home/josemartin/example_rna_seq_zt2_zt14/zt2_chr5_rep2.fastq.gz
+
+
