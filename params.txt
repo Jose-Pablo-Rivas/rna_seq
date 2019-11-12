@@ -14,4 +14,5 @@ sample_3: /home/josemartin/example_rna_seq_zt2_zt14/zt14_chr5_rep2.fastq.gz
 
 sample_4: /home/josemartin/example_rna_seq_zt2_zt14/zt2_chr5_rep2.fastq.gz
 
+path: /home/josemartin/github_repos/rna_seq
 
