@@ -1,21 +1,18 @@
 ## Autor: Jose Martin
 ## Contacto: marmorper20@us.es
 
-
-
 #! /bin/bash
 
-## DESPUES DE HACER ESTO CON TODAS LAS MUESTRAS:
+
+## Parameters loading
+WD=$1
 
 ## Transcriptome merging
-
-cd ../../results
+cd $WD/results
 
 ## Merging sample transcriptomes
-
-stringtie --merge -G ../annotation/annotation.gtf -o stringtie_merged.gtf merge_list.txt
+stringtie --merge -G $WD/annotation/annotation.gtf -o stringtie_merged.gtf $WD/logs/merge_list.txt
 
 ## Comparing our assembly with the reference
-
-gffcompare -r ../annotation/annotation.gtf -G -o comparison stringtie_merged.gtf
+gffcompare -r $WD/annotation/annotation.gtf -G -o comparison stringtie_merged.gtf
 
