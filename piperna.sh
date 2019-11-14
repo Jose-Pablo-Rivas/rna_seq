@@ -79,7 +79,7 @@ cp $GNM genome.fa
 ## Lo mismo hay que poner aqui una orden de descomprimir
 
 
-##Downloading annotatio 
+##Downloading annotation
 cd $WD/annotation
 cp $ANT annotation.gtf
 
