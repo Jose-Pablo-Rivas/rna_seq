@@ -32,7 +32,7 @@ samtools index sample_${SAMPLE_ID}.bam
 stringtie -G $WD/annotation/annotation.gtf -o sample_${SAMPLE_ID}.gtf -l sample_${SAMPLE_ID} sample_${SAMPLE_ID}.bam
 
 ## Preparing merge list file for transcriptome merging
-echo $WD/samples/sample_${SAMPLE_ID}/sample_${SAMPLE_ID}.gtf >> $WD/logs/merge_list.txt
+echo $WD/samples/sample_${SAMPLE_ID}/sample_${SAMPLE_ID}.gtf >> $WD/results/merge_list.txt
 
 ## Gene Expression Quantification
 stringtie -e -B -G $WD/annotation/annotation.gtf -o sample_${SAMPLE_ID}.gtf sample_${SAMPLE_ID}.bam
@@ -41,6 +41,8 @@ stringtie -e -B -G $WD/annotation/annotation.gtf -o sample_${SAMPLE_ID}.gtf samp
 echo sample_${SAMPLE_ID} "DONE" >> $WD/logs/blackboard_rnaseq.txt
 
 DONE_SAMPLES=$(cat $WD/logs/blackboard_rnaseq.txt | grep "DONE" | wc -l)
+
+## Tambien se podria haber hecho: DONE_SAMPLES=$(wc -l $WD/logs/blackboards_rnaseq.txt | awk '{ print $1 }')
 
 echo "Done samples:" $DONE_SAMPLES
 

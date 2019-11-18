@@ -11,7 +11,7 @@ WD=$1
 cd $WD/results
 
 ## Merging sample transcriptomes
-stringtie --merge -G $WD/annotation/annotation.gtf -o stringtie_merged.gtf $WD/logs/merge_list.txt
+stringtie --merge -G $WD/annotation/annotation.gtf -o stringtie_merged.gtf $WD/results/merge_list.txt
 
 ## Comparing our assembly with the reference
 gffcompare -r $WD/annotation/annotation.gtf -G -o comparison stringtie_merged.gtf
